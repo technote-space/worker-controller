@@ -1,12 +1,11 @@
-# TypeScript Package Template
+# Worker Controller
 
-[![npm version](https://badge.fury.io/js/%40technote-space%2Fts-package-template.svg)](https://badge.fury.io/js/%40technote-space%2Fts-package-template)
-[![CI Status](https://github.com/technote-space/ts-package-template/workflows/CI/badge.svg)](https://github.com/technote-space/ts-package-template/actions)
-[![codecov](https://codecov.io/gh/technote-space/ts-package-template/branch/master/graph/badge.svg)](https://codecov.io/gh/technote-space/ts-package-template)
-[![CodeFactor](https://www.codefactor.io/repository/github/technote-space/ts-package-template/badge)](https://www.codefactor.io/repository/github/technote-space/ts-package-template)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/technote-space/ts-package-template/blob/master/LICENSE)
+[![npm version](https://badge.fury.io/js/%40technote-space%2Fworker-controller.svg)](https://badge.fury.io/js/%40technote-space%2Fworker-controller)
+[![CI Status](https://github.com/technote-space/worker-controller/workflows/CI/badge.svg)](https://github.com/technote-space/worker-controller/actions)
+[![CodeFactor](https://www.codefactor.io/repository/github/technote-space/worker-controller/badge)](https://www.codefactor.io/repository/github/technote-space/worker-controller)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/technote-space/worker-controller/blob/master/LICENSE)
 
-Template for npm package.
+Worker Controller
 
 ## Table of Contents
 
@@ -16,18 +15,15 @@ Template for npm package.
 <summary>Details</summary>
 
 - [Setup](#setup)
-  - [yarn](#yarn)
-  - [npm](#npm)
 - [Author](#author)
 
 </details>
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Setup
-### yarn
-- `yarn setup`
-### npm
-- `npm run setup`
+```shell script
+yarn add @technote-space/worker-controller
+```
 
 ## Author
 [GitHub (Technote)](https://github.com/technote-space)  
