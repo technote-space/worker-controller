@@ -42,10 +42,14 @@ module.exports = {
     entry: {
         index: path.join(__dirname, 'src/index.jsx'),
 
-        // create worker.js
+        // create worker-controller.worker.js
         'worker-controller.worker': '@technote-space/worker-controller/dist/Worker/worker-controller.worker',
         // create process.js
         process: path.join(__dirname, 'src/Process'),
+    },
+    output: {
+        //...
+        filename: '[name].js',
     },
     //...
 };
