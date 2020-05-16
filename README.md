@@ -51,7 +51,7 @@ module.exports = {
 };
 ```
 
-`Test.jsx`
+`Run.jsx`
 ```typescript jsx
 import React, {useEffect, useMemo, useState} from 'react';
 import {Button} from '@material-ui/core';
@@ -68,7 +68,7 @@ export default function NavContentEx() {
         worker.reset();
     }, []);
 
-    return useMemo(() => <>
+    return useMemo(() => !worker ? null : <>
       <Button onClick={() => worker.reset()}>Reset</Button>
       <Button onClick={() => worker.start()}>Start</Button>
       <Button onClick={() => worker.stop()}>Stop</Button>
