@@ -25,6 +25,61 @@ Worker Controller
 yarn add @technote-space/worker-controller
 ```
 
+`Pgocess.ts`
+```typescript
+import {ProcessBase} from '@technote-space/worker-controller';
+import {UpdateResult} from './types';
+
+global['Process'] = class Process extends ProcessBase<UpdateResult> {
+    //...
+};
+```
+
+`webpack.js`
+```js
+module.exports = {
+    //...
+    entry: {
+        index: path.join(__dirname, 'src/index.jsx'),
+
+        // create worker-controller.worker.js
+        'worker-controller.worker': '@technote-space/worker-controller/dist/Worker/worker-controller.worker',
+        // create process.js
+        process: path.join(__dirname, 'src/Process'),
+    },
+    output: {
+        //...
+        filename: '[name].js',
+    },
+    //...
+};
+```
+
+`Run.jsx`
+```typescript jsx
+import React, {useEffect, useMemo, useState} from 'react';
+import {Button} from '@material-ui/core';
+import {Controller} from '@technote-space/worker-controller';
+
+export default function NavContentEx() {
+    const [worker, setWorker] = useState(null);
+
+    useEffect(() => {
+        const worker = new Controller(result => {
+          //...
+        });
+        setWorker(worker);
+        worker.reset();
+    }, []);
+
+    return useMemo(() => !worker ? null : <>
+      <Button onClick={() => worker.reset()}>Reset</Button>
+      <Button onClick={() => worker.start()}>Start</Button>
+      <Button onClick={() => worker.stop()}>Stop</Button>
+    </>, [worker])
+}
+```
+
 ## Author
 [GitHub (Technote)](https://github.com/technote-space)  
 [Blog](https://technote.space)
