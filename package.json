@@ -1,6 +1,6 @@
 {
   "name": "@technote-space/worker-controller",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Worker Controller",
   "author": {
     "name": "Technote",
@@ -45,6 +45,6 @@
     "test": "yarn lint",
     "lint": "eslint 'src/**/*.ts' --cache",
     "lint:fix": "eslint --fix 'src/**/*.ts'",
-    "update": "ncu -u && yarn install && yarn upgrade && yarn audit"
+    "update": "npx ncu -u && yarn install && yarn upgrade && yarn audit"
   }
 }
