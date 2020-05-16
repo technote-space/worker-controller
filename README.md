@@ -54,13 +54,14 @@ module.exports = {
 ```typescript jsx
 import React, {useEffect, useMemo, useState} from 'react';
 import {Button} from '@material-ui/core';
-import Controller from './Controller';
+import {Controller} from '@technote-space/worker-controller';
+import {UpdateResult} from './types';
 
 export default function NavContentEx() {
     const [worker, setWorker] = useState(null);
 
     useEffect(() => {
-        const worker = new Controller(result => {
+        const worker = new Controller<UpdateResult>(result => {
           //...
         });
         setWorker(worker);
