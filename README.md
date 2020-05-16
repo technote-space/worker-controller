@@ -35,20 +35,6 @@ global['Process'] = class Process extends ProcessBase<UpdateResult> {
 };
 ```
 
-`Controller.ts`
-```typescript
-import {ControllerBase, Listener} from '@technote-space/worker-controller';
-import {UpdateResult} from './types';
-
-export default class Controller extends ControllerBase<UpdateResult> {
-    //...
-
-    public getListener(): Listener<UpdateResult> {
-        //...
-    }
-}
-```
-
 `webpack.js`
 ```js
 module.exports = {

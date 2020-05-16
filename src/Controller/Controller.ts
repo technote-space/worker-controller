@@ -2,10 +2,10 @@ import {IController} from '..';
 import {deserialize} from '../Worker';
 import {Listener} from '../types';
 
-export abstract class ControllerBase<ObjectType> implements IController<ObjectType> {
+export class Controller<ObjectType> implements IController<ObjectType> {
   private readonly worker: Worker;
 
-  protected constructor(path = 'process.js') {
+  public constructor(protected readonly _listener: (result) => void, path = 'process.js') {
     this.worker = new Worker('worker-controller.worker.js');
     this.worker.addEventListener('message', event => {
       this.getListener()(deserialize(event.data));
@@ -13,7 +13,9 @@ export abstract class ControllerBase<ObjectType> implements IController<ObjectTy
     this.worker.postMessage(['init', path]);
   }
 
-  public abstract getListener(): Listener<ObjectType>;
+  public getListener(): Listener<ObjectType> {
+    return this._listener;
+  }
 
   public reset(): void {
     this.worker.postMessage(['reset']);

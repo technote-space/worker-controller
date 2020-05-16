@@ -5,5 +5,5 @@ export {IController} from './Controller/IController';
 export {IRunner} from './Runner/IRunner';
 
 export {ProcessBase} from './Process/ProcessBase';
-export {ControllerBase} from './Controller/ControllerBase';
+export {Controller} from './Controller/Controller';
 export {Runner} from './Runner/Runner';
