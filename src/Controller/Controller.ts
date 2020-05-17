@@ -7,10 +7,10 @@ export class Controller<ObjectType> implements IController<ObjectType> {
 
   public constructor(protected readonly _listener: Listener<ObjectType>, options?: {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    context: any;
-    path: string;
-    className: string;
-    workerName: string;
+    context?: any;
+    path?: string;
+    className?: string;
+    workerName?: string;
   }) {
     this.worker = new Worker(options?.workerName ?? 'worker-controller.worker.js');
     this.worker.addEventListener('message', event => {
