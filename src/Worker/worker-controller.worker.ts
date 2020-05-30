@@ -17,6 +17,7 @@ self.addEventListener('message', async(event: IMessageEvent) => {
       });
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       runner.setProcess(new global[event.data[2] ?? 'Process'](runner.getOnUpdateCallback(), JSON.parse(event.data[3] ?? {})) as IProcess<any>);
+      await runner.reset(undefined);
       break;
     }
     case 'reset':
