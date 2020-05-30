@@ -5,7 +5,8 @@ export interface IProcess<ObjectType> {
 
   sleep: number;
 
-  reset(): Promise<void>;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  reset(context: any): Promise<void>;
 
   step(): Promise<void>;
 

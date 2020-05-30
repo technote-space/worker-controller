@@ -10,7 +10,8 @@ export abstract class ProcessBase<ObjectType> implements IProcess<ObjectType> {
     return DEFAULT_SLEEP;
   }
 
-  public abstract reset(): Promise<void>;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  public abstract reset(context: any): Promise<void>;
 
   public abstract step(): Promise<void>;
 

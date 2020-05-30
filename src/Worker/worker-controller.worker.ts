@@ -21,7 +21,7 @@ self.addEventListener('message', async(event: IMessageEvent) => {
     }
     case 'reset':
       if (runner) {
-        await runner.reset();
+        await runner.reset(JSON.parse(event.data[1] ?? {}));
       }
       break;
     case 'start':

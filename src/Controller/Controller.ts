@@ -23,8 +23,9 @@ export class Controller<ObjectType> implements IController<ObjectType> {
     return this._listener;
   }
 
-  public reset(): void {
-    this.worker.postMessage(['reset']);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any,@typescript-eslint/explicit-module-boundary-types
+  public reset(context?: any): void {
+    this.worker.postMessage(['reset', JSON.stringify(context ?? {})]);
   }
 
   public start(): void {

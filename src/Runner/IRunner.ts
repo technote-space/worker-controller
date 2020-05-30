@@ -1,7 +1,8 @@
 import {IProcess} from '..';
 
 export interface IRunner<ObjectType> {
-  reset(): Promise<void>;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  reset(context: any): Promise<void>;
 
   start(): Promise<void>;
 
