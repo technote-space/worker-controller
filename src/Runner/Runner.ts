@@ -34,7 +34,8 @@ export class Runner<ObjectType> implements IRunner<ObjectType> {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
 
-  public async reset(): Promise<void> {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any,@typescript-eslint/explicit-module-boundary-types
+  public async reset(context: any): Promise<void> {
     if (this.onCancel || !this.process) {
       return;
     }
@@ -45,7 +46,7 @@ export class Runner<ObjectType> implements IRunner<ObjectType> {
       await this.sleep(CANCEL_SLEEP);
     }
 
-    await this.process.reset();
+    await this.process.reset(context);
     this.onCancel = false;
 
     await this.onUpdated();
