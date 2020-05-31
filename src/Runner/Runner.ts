@@ -89,6 +89,5 @@ export class Runner<ObjectType> implements IRunner<ObjectType> {
     }
 
     this.onCancel = true;
-    await this.onStatusChanged('canceling');
   }
 }
