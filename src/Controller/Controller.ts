@@ -33,6 +33,9 @@ export class Controller<ObjectType> implements IController<ObjectType> {
   }
 
   public stop(): void {
+    this.getListener()({
+      status: 'canceling',
+    });
     this.worker.postMessage(['stop']);
   }
 }
