@@ -15,8 +15,12 @@ self.addEventListener('message', async(event: IMessageEvent) => {
       runner = new Runner(data => {
         self.postMessage(data);
       });
+
+      const context  = JSON.parse(event.data[3] ?? {});
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      runner.setProcess(new global[event.data[2] ?? 'Process'](runner.getOnUpdateCallback(), JSON.parse(event.data[3] ?? {})) as IProcess<any>);
+      const process = new global[event.data[2] ?? 'Process'](runner.getOnUpdateCallback(), context) as IProcess<any>;
+      await process.init(context);
+      runner.setProcess(process);
       await runner.reset(undefined);
       break;
     }

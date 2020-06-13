@@ -2,6 +2,10 @@ import {IProcess} from '..';
 import {DEFAULT_SLEEP} from '../constants';
 
 export abstract class ProcessBase<ObjectType> implements IProcess<ObjectType> {
+  public async init(): Promise<void> {
+    //
+  }
+
   public abstract get progress(): number;
 
   public abstract get isFinished(): boolean;
