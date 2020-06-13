@@ -2,7 +2,8 @@ import {IProcess} from '..';
 import {DEFAULT_SLEEP} from '../constants';
 
 export abstract class ProcessBase<ObjectType> implements IProcess<ObjectType> {
-  public async init(): Promise<void> {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  public async init(context: any): Promise<void> {
     //
   }
 
