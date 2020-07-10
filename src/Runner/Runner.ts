@@ -1,6 +1,6 @@
 import {Status, IProcess, IRunner} from '..';
 import {serializeProcess, serializeStatus} from '../Worker';
-import {CANCEL_SLEEP, MINIMUM_STEP} from '../constants';
+import {CANCEL_SLEEP} from '../constants';
 
 export class Runner<ObjectType> implements IRunner<ObjectType> {
   private onCancel  = false;
@@ -66,7 +66,7 @@ export class Runner<ObjectType> implements IRunner<ObjectType> {
       await this.process.step();
       await this.sleep(this.process.sleep);
 
-      if (this.process.progress > prev + MINIMUM_STEP) {
+      if (this.process.progress > prev + this.process.minimumStep) {
         prev = this.process.progress;
         await this.onUpdated();
       }
