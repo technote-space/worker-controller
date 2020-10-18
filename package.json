@@ -1,30 +1,37 @@
 {
   "name": "@technote-space/worker-controller",
-  "version": "0.5.7",
+  "version": "0.5.8",
   "description": "Worker Controller",
-  "author": {
-    "name": "Technote",
-    "email": "technote.space@gmail.com",
-    "url": "https://technote.space"
-  },
-  "license": "MIT",
   "keywords": [
     "github",
     "github actions"
   ],
   "homepage": "https://github.com/technote-space/worker-controller",
+  "bugs": {
+    "url": "https://github.com/technote-space/worker-controller/issues"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/technote-space/worker-controller.git"
   },
-  "bugs": {
-    "url": "https://github.com/technote-space/worker-controller/issues"
+  "license": "MIT",
+  "author": {
+    "name": "Technote",
+    "email": "technote.space@gmail.com",
+    "url": "https://technote.space"
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
+  "scripts": {
+    "build": "tsc",
+    "lint": "eslint 'src/**/*.ts' --cache",
+    "lint:fix": "eslint --fix 'src/**/*.ts'",
+    "test": "yarn lint",
+    "update": "npx npm-check-updates -u && yarn install && yarn upgrade && yarn audit"
+  },
   "dependencies": {},
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
@@ -39,12 +46,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "scripts": {
-    "build": "tsc",
-    "test": "yarn lint",
-    "lint": "eslint 'src/**/*.ts' --cache",
-    "lint:fix": "eslint --fix 'src/**/*.ts'",
-    "update": "npx npm-check-updates -u && yarn install && yarn upgrade && yarn audit"
   }
 }
