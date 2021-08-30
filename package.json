@@ -1,6 +1,6 @@
 {
   "name": "@technote-space/worker-controller",
-  "version": "0.5.42",
+  "version": "0.5.43",
   "description": "Worker Controller",
   "keywords": [
     "github",
@@ -39,14 +39,14 @@
   "devDependencies": {
     "@commitlint/cli": "^13.1.0",
     "@commitlint/config-conventional": "^13.1.0",
-    "@types/node": "^16.7.1",
-    "@typescript-eslint/eslint-plugin": "^4.29.2",
-    "@typescript-eslint/parser": "^4.29.2",
+    "@types/node": "^16.7.6",
+    "@typescript-eslint/eslint-plugin": "^4.29.3",
+    "@typescript-eslint/parser": "^4.29.3",
     "eslint": "^7.32.0",
-    "husky": "^7.0.1",
+    "husky": "^7.0.2",
     "lint-staged": "^11.1.2",
     "pinst": "^2.1.6",
-    "typescript": "^4.3.5"
+    "typescript": "^4.4.2"
   },
   "publishConfig": {
     "access": "public"
